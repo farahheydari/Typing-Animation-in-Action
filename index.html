@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+        body{
+            background-color: rgb(1, 1, 46);
+            >h1{
+                color: wheat;
+                display: flex;
+                justify-content: center;
+                margin-top: 50px;
+            }
+        }
+        .container{
+            margin: 150px auto;
+            width: 500px;
+            height: auto;
+            background-color: rgb(11, 89, 109);
+            border-top: 15px solid rgb(0, 255, 213);
+            >h2{
+                color: aliceblue;
+                font-family:  serif;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    
+        <h1>short story about trying something new? </h1>
+    
+    <div class="container">
+        <h2 id="demo"></h2>
+    </div>
+
+</body>
+<script>
+    let demo =document.getElementById('demo')
+    let i = 0
+    let k = 0
+    let flag=0
+    const myArr = [
+        ' Heres my true story:',
+
+        'I grew up in a home where seafood was very seldom eaten. When I was still a kid,my family went to a restaurant with my aunt, uncle and cousins.  ',
+        'My aunt and uncle were widely traveled people who ate all kinds of food, and among the dishes they ordered was one with prawn. ',
+        'I sat through the meal enjoying what was familiar to me and rejecting all encouragement to try this unknown food that looked so strange and unappetizing to me. Finally, with only two prawn left, I relented and reluctantly took a small bite.',
+        'Oh! Such tender deliciousness! Of course, because I had waited so long, there was now only one more of these delights left for me to eat. I promised myself that, from then on, I would always try new foods right away, and I ve always kept that promise. I try to approach other areas of my life with the same enthusiasm.'
+    ]
+    let temp =setInterval(()=>{
+       if(flag<myArr.length){
+            if(i<=myArr[flag].length+10){
+                demo.innerHTML=myArr[flag].slice(0 , i)
+                i++
+                if(i==myArr[flag].length){
+                    k=i
+                }
+            }else{
+     
+                if(k>0){
+                        k--
+                    demo.innerHTML=myArr[flag].slice( 0 , k)
+                }else{
+                flag++
+                i=0
+                }
+            }
+       }
+    }, 100)
+</script>
+</html>
